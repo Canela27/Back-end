@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,6 +32,9 @@ public class Celular implements Serializable {
 	@Column(name = "created_at")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdAt;
+	
+	@Transient
+	private Integer port;
 
 	public Long getId() {
 		return id;
@@ -62,5 +66,13 @@ public class Celular implements Serializable {
 
 	public void setCreatedAt(Date createAt) {
 		this.createdAt = createdAt;
+	}
+
+	public Integer getPort() {
+		return port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
 	}
 }
