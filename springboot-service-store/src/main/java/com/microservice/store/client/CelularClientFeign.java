@@ -10,7 +10,7 @@ import com.microservice.store.models.Celular;
 
 
 @Service("ServiceFeign")
-@FeignClient(name = "service-celulares", url = "localhost:8081")
+@FeignClient(name = "service-celulares")
 public interface CelularClientFeign {
 	
 	@GetMapping("/list")
